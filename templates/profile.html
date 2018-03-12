@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %} {{user}}{% endblock %}</title>
+</head>
+<body>
+  <main>
+    {% block content %}
+      <center><h1>Profile Page {{number}}</h1></center>
+
+      <br/>
+      <br/>
+      {% for status in post   %}
+      <br/>
+      <ul>
+          <center>
+          <li>
+      <b>         {{status}} <br/>
+          </li>
+      </ul>
+        </center>
+
+          </b>
+
+      {% endfor%}
+     <form action="connect/?username={{number}}"  method="POST">
+        {% csrf_token %}
+            {{ form  }}
+        </br>
+      <input type="submit" value="connect" />
+     </form>
+
+    {% endblock %}
+
+  </main>
+</body>
+</html>

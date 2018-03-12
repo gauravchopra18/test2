@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %} Welcome {{user}} {% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<h1><center><marquee>Hi Welcome to your Homepage {{ user }}!</marquee></center></h1>
+</br>
+</br>
+
+
+<h2><center>Message board homepage</center></h2>
+</br>
+<a href="details/?username={{user}}">Profile</a>
+</br>
+<center>
+
+
+</div>
+    <form action="/performs/"  method="POST">
+        {% csrf_token %}
+            {{ form  }}
+
+        </br>
+<input type="submit" value="Submit" />
+</form>
+
+
+    <br>
+
+
+    {% for data in post   %}
+   <b> {{ data}}</b> <br/>{{data.privacy}}
+
+
+ </br>
+ </br>
+
+    {% endfor %}
+</center>
+    <div align="right">
+        <p>
+        {% for user in userprof    %}
+
+
+            <a href="profile/?username={{user}}">{{ user}}</a>
+
+        </p>
+      {% endfor %}
+    </div>
+<br>
+
+
+</div>
+
+
+
+
+
+
+
+<div align="below"><p><a href="{% url 'logout' %}">logout</a></p></div>
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}

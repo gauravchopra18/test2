@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Welcome {{user}} {% endblock %}
+
+{% block content %}
+<h1><center>Hi Welcome to your PROFILE DETAILS{{ user }}!</center></h1>
+</br>
+<h3>
+    <center>
+
+   
+<b>FirstName</b> &nbsp;= &nbsp;<b> {{usser.first_name}}
+        <br><br>LastName&nbsp;= &nbsp;{{usser.last_name}}</b>
+<br/>
+        <br><br>
+<b>email</b> &nbsp;= &nbsp;<b>{{usser.email}} </b>
+
+<br>
+</h3>
+</center>
+
+
+<br/>
+
+
+{% endblock %}
